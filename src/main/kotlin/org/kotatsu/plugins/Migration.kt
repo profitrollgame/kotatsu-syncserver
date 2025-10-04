@@ -14,7 +14,6 @@ fun Application.runMigrations() {
 
 	val flyway = Flyway.configure()
 		.dataSource("jdbc:mysql://$host:$port/$dbName", user, password)
-		.baselineOnMigrate(true)
 		.load()
 
 	flyway.migrate()
